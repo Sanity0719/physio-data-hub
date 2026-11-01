@@ -1,0 +1,164 @@
+55 521 163
+.\app\src\main\AndroidManifest.xml:4: <!-- ===== 第 3 课新增：前台服务要的三个权限 ===== -->
+.\app\src\main\AndroidManifest.xml:17: <!-- ===== 第 6 课新增：局域网通路 ===== -->
+.\app\src\main\AndroidManifest.xml:47: <!-- ===== 第 3 课新增：没有界面的那段程序 =====
+.\app\src\main\java\com\example\physiorecord\MainActivity.kt:17: /**
+.\app\src\main\java\com\example\physiorecord\MainActivity.kt:129: /** 打开一个子页面；返回时用 [closePage] 原样回到进入前的页面 */
+.\app\src\main\java\com\example\physiorecord\MainActivity.kt:137: /** 从子页面回到进入前的那一页（重新 onResume，展示页会刷新） */
+.\app\src\main\java\com\example\physiorecord\capture\BleLinkSession.kt:14: /**
+.\app\src\main\java\com\example\physiorecord\capture\BleSensorSource.kt:5: /** 低功耗蓝牙设备的数据源：读走长连接会话，这里只保留回包解析。 */
+.\app\src\main\java\com\example\physiorecord\capture\CaptureService.kt:16: /**
+.\app\src\main\java\com\example\physiorecord\capture\CaptureService.kt:36: /** 采集间隔（毫秒）：10000 = 10 秒 */
+.\app\src\main\java\com\example\physiorecord\capture\CaptureService.kt:40: /**
+.\app\src\main\java\com\example\physiorecord\capture\CaptureService.kt:48: /** 周期调度：到点重新触发一次采集 */
+.\app\src\main\java\com\example\physiorecord\capture\CaptureService.kt:51: /**
+.\app\src\main\java\com\example\physiorecord\capture\CaptureService.kt:101: /** 服务不提供绑定 */
+.\app\src\main\java\com\example\physiorecord\capture\CaptureService.kt:104: /** 建"通知抽屉"：Android 8.0 起，发通知前必须先建好渠道，否则通知不显示 */
+.\app\src\main\java\com\example\physiorecord\capture\CaptureService.kt:117: /** 构造前台服务的常驻通知 */
+.\app\src\main\java\com\example\physiorecord\capture\CaptureSource.kt:3: /**
+.\app\src\main\java\com\example\physiorecord\capture\CaptureSource.kt:16: /** 设备编号：登记表里的 key，也是采集表归属的依据 */
+.\app\src\main\java\com\example\physiorecord\capture\CaptureSource.kt:19: /** 给人看的设备名 */
+.\app\src\main\java\com\example\physiorecord\capture\CaptureSource.kt:22: /** 读一次，返回一个原始读数（单指标设备的默认实现走这里） */
+.\app\src\main\java\com\example\physiorecord\capture\CaptureSource.kt:25: /**
+.\app\src\main\java\com\example\physiorecord\capture\CaptureSource.kt:34: /**
+.\app\src\main\java\com\example\physiorecord\capture\DemoBandSource.kt:3: /**
+.\app\src\main\java\com\example\physiorecord\capture\DemoBandSource.kt:19: /** 这台演示设备一次给三个指标，用来验证“一条读数带多个指标” */
+.\app\src\main\java\com\example\physiorecord\capture\DeviceCommand.kt:3: /**
+.\app\src\main\java\com\example\physiorecord\capture\DeviceCommand.kt:16: /** 命令的执行结果：成功（读带指标、下发带回执）、失败（原因）、超时无回执 */
+.\app\src\main\java\com\example\physiorecord\capture\DeviceCommand.kt:22: /** 兼容只关心一个值的调用方：取第一个指标 */
+.\app\src\main\java\com\example\physiorecord\capture\DeviceCommand.kt:28: /** 发出去了但没等到回话：结果未知，既不是成功也不是失败 */
+.\app\src\main\java\com\example\physiorecord\capture\DeviceHub.kt:6: /**
+.\app\src\main\java\com\example\physiorecord\capture\DeviceHub.kt:28: /** BLE 会话要用 Context 才能 connectGatt；在入口初始化一次 */
+.\app\src\main\java\com\example\physiorecord\capture\DeviceHub.kt:33: /** 界面里改过 BLE MAC 后，用这份参数建会话 */
+.\app\src\main\java\com\example\physiorecord\capture\DeviceHub.kt:38: /** 界面里改过地址/端口后，用这份参数建会话（没有覆盖时用登记表里的地址） */
+.\app\src\main\java\com\example\physiorecord\capture\DeviceHub.kt:43: /** 界面里改过蓝牙 MAC 后，用这份参数建会话 */
+.\app\src\main\java\com\example\physiorecord\capture\DeviceHub.kt:48: /** 关掉并丢掉这台设备的会话；下次连接按最新参数重建 */
+.\app\src\main\java\com\example\physiorecord\capture\DeviceHub.kt:53: /** 回调线：所有结果从这里出去，串行，不占用设备队列 */
+.\app\src\main\java\com\example\physiorecord\capture\DeviceHub.kt:58: /** 登记一台设备的数据源（可重复调用，后到的覆盖先到的） */
+.\app\src\main\java\com\example\physiorecord\capture\DeviceHub.kt:63: /** 提交命令；结果在回调线上送达。payload 只有 SEND_TEXT 用得上 */
+.\app\src\main\java\com\example\physiorecord\capture\DeviceHub.kt:81: /** 这台设备的会话；没有可连接的通道就返回 null */
+.\app\src\main\java\com\example\physiorecord\capture\DeviceHub.kt:128: /** 界面只读这个，不自己推断 */
+.\app\src\main\java\com\example\physiorecord\capture\DeviceHub.kt:132: /** 进程退出前（或测试收尾）关掉各设备队列与回调线 */
+.\app\src\main\java\com\example\physiorecord\capture\DeviceQueue.kt:5: /**
+.\app\src\main\java\com\example\physiorecord\capture\DeviceSources.kt:8: /**
+.\app\src\main\java\com\example\physiorecord\capture\DeviceSources.kt:23: /** 把登记表里所有“有通道可读”的设备都注册进 DeviceHub（内置源由调用方自行注册）。 */
+.\app\src\main\java\com\example\physiorecord\capture\LinkSession.kt:12: /**
+.\app\src\main\java\com\example\physiorecord\capture\LinkSession.kt:40: /** 读回包超时：连接还在，只是这一次没等到回话 */
+.\app\src\main\java\com\example\physiorecord\capture\LinkSession.kt:43: /** 一条通道的会话：连接状态、打开/关闭、发一行读一行。TCP 与经典蓝牙共用这一层。 */
+.\app\src\main\java\com\example\physiorecord\capture\LinkSession.kt:51: /**
+.\app\src\main\java\com\example\physiorecord\capture\LinkSession.kt:75: /** 掉线后自动重连：最多 3 次，每次间隔 1.5 秒；手动断开不重连 */
+.\app\src\main\java\com\example\physiorecord\capture\LinkSession.kt:127: /** 掉线后按次数退避重试；次数用完停在 FAILED */
+.\app\src\main\java\com\example\physiorecord\capture\LinkSession.kt:172: /** 发一行并等一行回话；回话超时算“读超时”，连接保持 */
+.\app\src\main\java\com\example\physiorecord\capture\PhoneSensorSource.kt:5: /**
+.\app\src\main\java\com\example\physiorecord\capture\PhoneSensorSource.kt:17: /** 返回 0..100 的随机数，用于无外设时跑通采集链路 */
+.\app\src\main\java\com\example\physiorecord\capture\SppLinkSession.kt:13: /**
+.\app\src\main\java\com\example\physiorecord\capture\SppLinkSession.kt:152: /** 标准串口服务 UUID（SPP） */
+.\app\src\main\java\com\example\physiorecord\capture\SppSensorSource.kt:5: /**
+.\app\src\main\java\com\example\physiorecord\capture\TcpSensorSource.kt:7: /**
+.\app\src\main\java\com\example\physiorecord\capture\UsbLinkSession.kt:16: /**
+.\app\src\main\java\com\example\physiorecord\capture\UsbSensorSource.kt:5: /** USB 串口设备的数据源：读走长连接会话，这里只保留回包解析。 */
+.\app\src\main\java\com\example\physiorecord\data\DeviceModel.kt:3: /**
+.\app\src\main\java\com\example\physiorecord\data\DeviceModel.kt:18: /** 地址按类型分开存，不塞进一个字符串里（避免用冒号个数猜传输方式）。 */
+.\app\src\main\java\com\example\physiorecord\data\DeviceModel.kt:20: /** 没有外部地址：本机模拟、或由系统自己发现 */
+.\app\src\main\java\com\example\physiorecord\data\DeviceModel.kt:23: /** 网络：主机 + 端口 */
+.\app\src\main\java\com\example\physiorecord\data\DeviceModel.kt:26: /** 蓝牙：MAC 地址 */
+.\app\src\main\java\com\example\physiorecord\data\DeviceModel.kt:29: /** USB：厂商号 + 产品号；串口名在接入时再定 */
+.\app\src\main\java\com\example\physiorecord\data\DeviceModel.kt:40: /** 通道：种类 + 地址 + 一句给人看的备注（例如“随机数，2 秒一次”） */
+.\app\src\main\java\com\example\physiorecord\data\DeviceModel.kt:48: /**
+.\app\src\main\java\com\example\physiorecord\data\DeviceModel.kt:70: /** 给界面用的一句话，例如“本机模拟”“WiFi/TCP 192.168.1.5:8899” */
+.\app\src\main\java\com\example\physiorecord\data\DeviceRegistry.kt:3: /**
+.\app\src\main\java\com\example\physiorecord\data\DeviceRegistry.kt:124: /** 界面里自建的设备：启动时从库里读出来，追加在代码登记的设备后面 */
+.\app\src\main\java\com\example\physiorecord\data\DeviceRegistry.kt:129: /** 启动时调用一次；重复调用会先清空再装 */
+.\app\src\main\java\com\example\physiorecord\data\DeviceRegistry.kt:146: /** 取某台设备的采集表名；未登记的设备直接报错，避免写到不存在的表里 */
+.\app\src\main\java\com\example\physiorecord\data\Formula.kt:3: /**
+.\app\src\main\java\com\example\physiorecord\data\Formula.kt:22: /**
+.\app\src\main\java\com\example\physiorecord\data\PhysioDatabase.kt:9: /**
+.\app\src\main\java\com\example\physiorecord\data\PhysioDatabase.kt:26: /** 数据库结构版本；1=旧单表，2=每设备一表，3=补建新设备表，4=多指标，5=图表定义，6=补建后来登记的设备（网络设备） */
+.\app\src\main\java\com\example\physiorecord\data\PhysioDatabase.kt:29: /** 旧版单表：保留不删，迁移完仍可回退 */
+.\app\src\main\java\com\example\physiorecord\data\PhysioDatabase.kt:43: /** 图表定义表：定义是独立对象，删它不动原始记录 */
+.\app\src\main\java\com\example\physiorecord\data\PhysioDatabase.kt:53: /** 下发命令历史：一次下发就是一行，状态从 PENDING 走到 APPLIED/REJECTED/NO_RECEIPT */
+.\app\src\main\java\com\example\physiorecord\data\PhysioDatabase.kt:64: /** 读数序号：同一时刻的多指标行共用同一个 reading_id，界面按它定位“一条” */
+.\app\src\main\java\com\example\physiorecord\data\PhysioDatabase.kt:67: /** 界面自建的设备：登记一次，重启仍在 */
+.\app\src\main\java\com\example\physiorecord\data\PhysioDatabase.kt:79: /** 一台设备一张采集表：一个时刻的一个指标一行；同刻同指标只留一条 */
+.\app\src\main\java\com\example\physiorecord\data\PhysioDatabase.kt:103: /**
+.\app\src\main\java\com\example\physiorecord\data\PhysioDatabase.kt:204: /** 旧表补 reading_id：按时刻从旧到新编 1..N（同一时刻的多指标行共用一个序号） */
+.\app\src\main\java\com\example\physiorecord\data\PhysioDatabase.kt:222: /** 图表定义：给人起名、指向一台设备和它的一组指标，图型单独存；删定义不动原始记录 */
+.\app\src\main\java\com\example\physiorecord\data\PhysioDatabase.kt:239: /** 3→4：重建表（旧 UNIQUE(at) 不能就地改），旧行按该设备的主指标回填，序号保留 */
+.\app\src\main\java\com\example\physiorecord\data\PhysioDatabase.kt:302: /**
+.\app\src\main\java\com\example\physiorecord\data\PhysioRepository.kt:12: /**
+.\app\src\main\java\com\example\physiorecord\data\PhysioRepository.kt:25: /**
+.\app\src\main\java\com\example\physiorecord\data\PhysioRepository.kt:36: /** 异步写一次读数（可带多个指标）：排到唯一的写库线；可选回调告诉调用方是否真写进去 */
+.\app\src\main\java\com\example\physiorecord\data\PhysioRepository.kt:44: /**
+.\app\src\main\java\com\example\physiorecord\data\PhysioRepository.kt:77: /**
+.\app\src\main\java\com\example\physiorecord\data\PhysioRepository.kt:86: /** 一次读数：序号 + 时刻 + 这一次读到的所有指标 */
+.\app\src\main\java\com\example\physiorecord\data\PhysioRepository.kt:95: /**
+.\app\src\main\java\com\example\physiorecord\data\PhysioRepository.kt:159: /** 按 id 取一条定义；不在就返回 null（例如定义已被删） */
+.\app\src\main\java\com\example\physiorecord\data\PhysioRepository.kt:183: /** 一条下发记录：状态机 PENDING → APPLIED / REJECTED / NO_RECEIPT */
+.\app\src\main\java\com\example\physiorecord\data\PhysioRepository.kt:241: /** 改一条定义（名字/指标/图型/公式）；createdAt 不动 */
+.\app\src\main\java\com\example\physiorecord\data\PhysioRepository.kt:260: /** 最近一次读数（含它带的全部指标） */
+.\app\src\main\java\com\example\physiorecord\data\PhysioRepository.kt:263: /** 手动补一条：值记到该设备的主指标上，时刻取当前 */
+.\app\src\main\java\com\example\physiorecord\data\PhysioRepository.kt:269: /** 改最近一次读数里主指标的值；返回改了几行（0 = 没有记录或值相同） */
+.\app\src\main\java\com\example\physiorecord\data\PhysioRepository.kt:280: /** 删最近一次读数（同一时刻的多个指标一起删）；返回删了几行 */
+.\app\src\main\java\com\example\physiorecord\data\PhysioRepository.kt:288: /** 删某个时间范围内的读数；返回删了几行 */
+.\app\src\main\java\com\example\physiorecord\data\PhysioRepository.kt:295: /** 按“设备 + 时刻”取一条读数（多指标会一起返回） */
+.\app\src\main\java\com\example\physiorecord\data\PhysioRepository.kt:299: /** 按“设备 + 时刻”删一条读数（同刻的多个指标一起删） */
+.\app\src\main\java\com\example\physiorecord\data\PhysioRepository.kt:305: /** 按“设备 + 时刻 + 指标”改一个值 */
+.\app\src\main\java\com\example\physiorecord\data\PhysioRepository.kt:314: /**
+.\app\src\main\java\com\example\physiorecord\data\PhysioRepository.kt:345: /** 取某台设备最近 limit 次读数（每次读数含多个指标），按时间从新到旧 */
+.\app\src\main\java\com\example\physiorecord\data\PhysioRepository.kt:362: /** 一页读数（数据列表用）：按时间从新到旧 */
+.\app\src\main\java\com\example\physiorecord\data\PhysioRepository.kt:380: /** 一条记录（给界面显示用）：读数序号、时刻、数值、设备编号 */
+.\app\src\main\java\com\example\physiorecord\data\PhysioRepository.kt:388: /** 给人看的设备名；登记表里找不到就退回编号 */
+.\app\src\main\java\com\example\physiorecord\data\PhysioRepository.kt:392: /**
+.\app\src\main\java\com\example\physiorecord\data\PhysioRepository.kt:413: /** 取某台设备在 [from, to] 时间窗内的记录，按时间从旧到新（画图用） */
+.\app\src\main\java\com\example\physiorecord\data\PhysioRepository.kt:431: /** 删除某台设备的全部记录；返回删掉几条 */
+.\app\src\main\java\com\example\physiorecord\data\PhysioRepository.kt:439: /** 数一数某台设备现在一共几条记录 */
+.\app\src\main\java\com\example\physiorecord\data\PhysioRepository.kt:451: /** 按读数序号删一条（同一序号的多个指标行一起删）；返回删掉几行 */
+.\app\src\main\java\com\example\physiorecord\data\PhysioRepository.kt:461: /** 按读数序号改某个指标的值；返回改了几行 */
+.\app\src\main\java\com\example\physiorecord\data\PhysioRepository.kt:471: /** 按时间范围删（含两端）；返回删掉几行 */
+.\app\src\main\java\com\example\physiorecord\data\PhysioRepository.kt:481: /** 读出自建设备并还原成运行时设备对象 */
+.\app\src\main\java\com\example\physiorecord\data\PhysioRepository.kt:519: /** 界面添加一台设备：落库 + 建它的采集表；返回是否成功 */
+.\app\src\main\java\com\example\physiorecord\export\DeviceCsv.kt:6: /**
+.\app\src\main\java\com\example\physiorecord\export\DeviceCsv.kt:20: /** 导出：返回实际写出的行数（不含表头） */
+.\app\src\main\java\com\example\physiorecord\export\DeviceCsv.kt:36: /** 导入：返回 导入几条 / 跳过几条（同刻已有）/ 坏行几条 */
+.\app\src\main\java\com\example\physiorecord\link\LanListener.kt:11: /**
+.\app\src\main\java\com\example\physiorecord\link\LanListener.kt:28: /** 给界面报信的三个口子：状态、一问一答、出错 */
+.\app\src\main\java\com\example\physiorecord\link\LanListener.kt:105: /**
+.\app\src\main\java\com\example\physiorecord\link\OutboundClient.kt:8: /**
+.\app\src\main\java\com\example\physiorecord\ui\AddDeviceFragment.kt:24: /**
+.\app\src\main\java\com\example\physiorecord\ui\Bg.kt:7: /** 后台干活的公共线程：查库/写库都走这里，结果转回界面线程 */
+.\app\src\main\java\com\example\physiorecord\ui\CommandCenterFragment.kt:21: /**
+.\app\src\main\java\com\example\physiorecord\ui\CustomizeFragment.kt:20: /**
+.\app\src\main\java\com\example\physiorecord\ui\CustomizeFragment.kt:181: /** 旋转/重建后把没保存的输入还回去 */
+.\app\src\main\java\com\example\physiorecord\ui\DataListFragment.kt:18: /**
+.\app\src\main\java\com\example\physiorecord\ui\DeviceListFragment.kt:13: /**
+.\app\src\main\java\com\example\physiorecord\ui\DevicesFragment.kt:28: /**
+.\app\src\main\java\com\example\physiorecord\ui\DevicesFragment.kt:134: /** 一行两格：等宽，间距一致 */
+.\app\src\main\java\com\example\physiorecord\ui\DevicesFragment.kt:179: /** 状态行与主按钮只读会话状态；每秒刷一次，后台读失败也能及时反映 */
+.\app\src\main\java\com\example\physiorecord\ui\DevicesFragment.kt:334: /** 回包格式沿用旧版：设备编号|序号|时刻|值|显示名 */
+.\app\src\main\java\com\example\physiorecord\ui\LinkSettingsFragment.kt:18: /**
+.\app\src\main\java\com\example\physiorecord\ui\LinkSettingsFragment.kt:126: /** 读输入并写入偏好；返回给人看的一句参数，失败返回 null */
+.\app\src\main\java\com\example\physiorecord\ui\ManageFragment.kt:19: /**
+.\app\src\main\java\com\example\physiorecord\ui\Modules.kt:5: /**
+.\app\src\main\java\com\example\physiorecord\ui\Modules.kt:19: /** 当前只登记"后端已经存在"的三个模块 */
+.\app\src\main\java\com\example\physiorecord\ui\Prefs.kt:6: /**
+.\app\src\main\java\com\example\physiorecord\ui\Prefs.kt:14: /** 当前操作的设备编号；默认取登记表里的第一台 */
+.\app\src\main\java\com\example\physiorecord\ui\Prefs.kt:19: /** 折线取最近多少个点 */
+.\app\src\main\java\com\example\physiorecord\ui\Prefs.kt:24: /** 主动外发的落点：模拟器先用 adb reverse 再填 127.0.0.1；真机填 PC 的局域网 IP */
+.\app\src\main\java\com\example\physiorecord\ui\Prefs.kt:29: /** 经典蓝牙（SPP）设备的 MAC */
+.\app\src\main\java\com\example\physiorecord\ui\Prefs.kt:34: /** 低功耗蓝牙（BLE）设备的 MAC */
+.\app\src\main\java\com\example\physiorecord\ui\Prefs.kt:43: /** 每台设备当前选中的图表定义 id；0 = 还没选 */
+.\app\src\main\java\com\example\physiorecord\ui\RemoteDataFragment.kt:17: /**
+.\app\src\main\java\com\example\physiorecord\ui\RemoteDevicesFragment.kt:21: /**
+.\app\src\main\java\com\example\physiorecord\ui\TrendChartView.kt:11: /**
+.\app\src\main\java\com\example\physiorecord\ui\TrendChartView.kt:54: /** 喂数据：一串（时刻毫秒, 原始值），按时间从旧到新传进来 */
+.\app\src\main\java\com\example\physiorecord\ui\UiKit.kt:25: /**
+.\app\src\main\java\com\example\physiorecord\ui\UiKit.kt:41: /** 统一卡片：半透明深底 + 冷色描边 */
+.\app\src\main\java\com\example\physiorecord\ui\UiKit.kt:50: /** 卡片里的内容容器 */
+.\app\src\main\java\com\example\physiorecord\ui\UiKit.kt:86: /** 一行统计块：大数字 + 小标签 */
+.\app\src\main\java\com\example\physiorecord\ui\UiKit.kt:105: /**
+.\app\src\main\java\com\example\physiorecord\ui\UiKit.kt:129: /** 统一的折线图风格：暗底、青色线、淡填充、无网格噪声 */
+.\app\src\main\java\com\example\physiorecord\ui\UiKit.kt:155: /** 把「时刻-数值」喂给折线：横轴按点序均匀铺开 */
+.\app\src\main\java\com\example\physiorecord\ui\UiKit.kt:184: /** 多序列：x 就是读数下标，各指标按同一读数下标对齐；缺的指标跳过，不用别的读数补 */
+.\app\src\main\java\com\example\physiorecord\ui\UiKit.kt:214: /** 柱状图：横向是定义里的指标名，纵向是最近一次读数 */
+.\app\src\main\java\com\example\physiorecord\ui\UiKit.kt:275: /** 饼图：每一块是定义里的一个指标的最近一次读数 */
+.\app\src\main\java\com\example\physiorecord\ui\VisualizeFragment.kt:16: /**

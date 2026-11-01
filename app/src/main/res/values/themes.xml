@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 蓝黑科幻底 + 青色高光；用 Material 深色主题，控件自带正确的交互态 -->
+    <style name="Theme.Physio" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/sci_cyan</item>
+        <item name="colorOnPrimary">#001018</item>
+        <item name="colorPrimaryContainer">#0B2038</item>
+        <item name="colorOnPrimaryContainer">@color/sci_on_surface</item>
+        <item name="colorSecondary">@color/sci_blue</item>
+        <item name="colorSurface">@color/sci_surface</item>
+        <item name="colorSurfaceVariant">#122036</item>
+        <item name="colorOnSurface">@color/sci_on_surface</item>
+        <item name="colorOnSurfaceVariant">#7E90B0</item>
+        <item name="android:colorBackground">@color/sci_bg</item>
+        <item name="android:statusBarColor">@color/sci_bg</item>
+        <item name="android:navigationBarColor">@color/sci_bg</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>

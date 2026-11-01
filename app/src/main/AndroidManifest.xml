@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- ===== 前台服务所需权限 ===== -->
+
+    <!-- ① 基础权限：写进清单即生效，安装即授予（normal），运行时不会弹窗 -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <!-- ② 服务类型对应的权限：我们声明的类型是 dataSync（同为安装即授，不弹窗）
+         注意：会弹窗的是 health / camera / microphone / location 那几类"类型自带的运行时前提" -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+
+    <!-- ③ 通知权限：Android 13 起是运行时权限，要在界面上申请
+         不授予也不会让服务失效——只是通知在通知栏看不见（任务管理器里仍看得到） -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- ===== 局域网通路所需权限 ===== -->
+
+    <!-- ① 开套接字用：normal，安装即授，不弹窗 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- ② 访问局域网：Android 17 起是运行时权限（dangerous），只在 SDK 37+ 申请 -->
+    <uses-permission android:name="android.permission.ACCESS_LOCAL_NETWORK" />
+
+    <!-- ===== 经典蓝牙（SPP）通道 ===== -->
+    <!-- Android 11 及以下用这两个旧权限 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" android:maxSdkVersion="30" />
+    <!-- Android 12 起：连接/查询已配对设备是运行时权限，连接前要申请 -->
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Physio">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- ===== 前台服务组件 =====
+             exported=false：只有本应用能启动它
+             foregroundServiceType：登记"这个服务在干什么"（系统按类型算额度）
+             targetSdk 14+ 不声明类型，调 startForeground() 会抛 MissingForegroundServiceTypeException -->
+        <service
+            android:name=".capture.CaptureService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync" />
+    </application>
+
+</manifest>

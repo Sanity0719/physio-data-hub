@@ -1,0 +1,18 @@
+17
+app/src/main/java/com/example/physiorecord\capture\BleLinkSession.kt::19::* 打开通知 → 收包进队列。扫描配对不在本片范围。
+app/src/main/java/com/example/physiorecord\capture\CaptureService.kt::17::* 前台服务：**没有界面的那段程序**。
+app/src/main/java/com/example/physiorecord\capture\CaptureService.kt::20::*   1. 进服务时**先挂上通知**（这是"用户看得见"的凭证，也是前台服务的硬要求）；
+app/src/main/java/com/example/physiorecord\capture\CaptureService.kt::21::*   2. 按一个**固定间隔**，每次都做**同一件事**：从数据源读一次 → 通过仓库写进库；
+app/src/main/java/com/example/physiorecord\capture\CaptureService.kt::25::* 本课（第 4 课）把每一轮的"读一次、写一笔"交给后台执行线，
+app/src/main/java/com/example/physiorecord\capture\CaptureService.kt::42::* 在那里调 Prefs(this) 会直接空指针把服务打死。
+app/src/main/java/com/example/physiorecord\capture\CaptureService.kt::48::/** 用来"到点再叫我一次" */
+app/src/main/java/com/example/physiorecord\capture\CaptureService.kt::101::/** 服务不提供绑定（本课不需要） */
+app/src/main/java/com/example/physiorecord\capture\CaptureService.kt::117::/** 造那条"我看得见"的通知 */
+app/src/main/java/com/example/physiorecord\capture\CaptureSource.kt::11::* 以后接蓝牙、串口、网络，都只是"再写一个实现类"：
+app/src/main/java/com/example/physiorecord\capture\DeviceCommand.kt::6::* 现在四种；以后加"改配置""升级固件"也往这里加，
+app/src/main/java/com/example/physiorecord\capture\PhoneSensorSource.kt::17::/** 演示用：返回 0..100 之间的一个随机数（真实传感器读取不在本次范围） */
+app/src/main/java/com/example/physiorecord\link\LanListener.kt::14::* 关键：**另开一条专用线程**，绝不复用界面那条执行线——否则 accept 会把界面刷新堵死。
+app/src/main/java/com/example/physiorecord\link\LanListener.kt::15::* 只做一件事：收一句、回一句；回什么由外面传进来的 reply 决定（本课是"库里最新一笔"）。
+app/src/main/java/com/example/physiorecord\link\OutboundClient.kt::13::* 本课先把它连到"同一网络里一台能被连到的机器"（模拟器上是宿主机）来验证方向。
+app/src/main/java/com/example/physiorecord\ui\Modules.kt::8::* 以后加一个模块（比如交互），只在这里加一行 Module(...)，
+app/src/main/java/com/example/physiorecord\ui\UiKit.kt::107::* 以后加功能就是加一块，不用把页面拉成一列。

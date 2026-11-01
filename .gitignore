@@ -1,0 +1,23 @@
+# Gradle
+.gradle/
+build/
+app/build/
+
+# Android Studio / IDE
+.idea/
+*.iml
+local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+
+# 产物
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# 系统 / 临时
+.DS_Store
+Thumbs.db
+*.log

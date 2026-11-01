@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="sci_cyan">#00E5FF</color>
+    <color name="sci_blue">#2D7DFF</color>
+    <color name="sci_bg">#05070E</color>
+    <color name="sci_surface">#0B1526</color>
+    <color name="sci_on_surface">#DCE7F5</color>
+</resources>
